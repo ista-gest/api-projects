@@ -27,6 +27,6 @@ var corsOptions = {
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }
 app.use(cors(corsOptions));
-app.listen(3001, () => {
+app.listen(3000, () => {
     console.log(`Server Started at ${3000}`)
 })
