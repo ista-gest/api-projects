@@ -1,6 +1,6 @@
 const express = require('express');
-//const helmet = require("helmet");
-//app.use(helmet())
+const cors = require('cors');
+
 const mongoose = require('mongoose');
 const routes = require('./routes/routes');
 
@@ -20,7 +20,13 @@ database.once('connected', () => {
 
 const app = express();
 app.use(express.json());
-app.use('/api', routes)
-app.listen(3000, () => {
+app.use('/api', routes);
+var corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200, // For legacy browser support
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}
+app.use(cors(corsOptions));
+app.listen(3001, () => {
     console.log(`Server Started at ${3000}`)
 })
