@@ -8,7 +8,7 @@ module.exports = router;
 router.post('/post', (req, res) => {
     const data = new Model({
         id: req.body.id,
-        title: req.body.fullName,
+        title: req.body.title,
         noteJ1:-1,
         noteJ2:-1,
         noteJ3:-1,
